@@ -16,10 +16,15 @@ public class screenshot {
 		ChromeDriver d = new ChromeDriver();
 		d.manage().window().maximize();
 		d.get("https://facebook.com");
-		TakesScreenshot scrShot =(TakesScreenshot)d;
-		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-		File DestFile=new File("C:\\Users\\SHRIHARI\\Desktop\\test\\facebook.png");
-		FileHandler.copy(SrcFile, DestFile);
+		String title = d.getTitle();
+		String url=d.getCurrentUrl();
+		System.out.println(title);
+		System.out.println(url);
+		d.close();
+		//		TakesScreenshot scrShot =(TakesScreenshot)d;
+//		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+//		File DestFile=new File("C:\\Users\\SHRIHARI\\Desktop\\test\\facebook.png");
+//		FileHandler.copy(SrcFile, DestFile);
 	}
 
 }
